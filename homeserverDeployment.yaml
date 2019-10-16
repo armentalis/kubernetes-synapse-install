@@ -18,7 +18,7 @@ spec:
   selector:
     app: synapse
   ports:
-    - port: 8008
+    - port: 80
       targetPort: 8008
   type: LoadBalancer
 ---

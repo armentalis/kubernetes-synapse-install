@@ -820,7 +820,7 @@ data:
 
     # Enable registration for new users.
     #
-    #enable_registration: false
+    enable_registration: True
 
     # Optional account validity configuration. This allows for accounts to be denied
     # any request after a given period.
