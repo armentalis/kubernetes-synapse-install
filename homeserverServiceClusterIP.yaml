@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: synapse-cip
+spec:
+  selector:
+    app: synapse
+  ports:
+    - port: 80
+      targetPort: 8008
+  type: ClusterIP
