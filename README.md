@@ -5,3 +5,5 @@ This [instruction](https://hub.docker.com/r/matrixdotorg/synapse/) can be used i
 
 How to generate config file section is really helpful to run Synapse
 
+Certs are requested via [cert manager](https://github.com/jetstack/cert-manager)
+
