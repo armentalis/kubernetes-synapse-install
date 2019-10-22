@@ -65,5 +65,5 @@ spec:
     - name: data-volume
       persistentVolumeClaim:
         claimName: data-pv-claim
-  restartPolicy: Never
+  restartPolicy: Always
 

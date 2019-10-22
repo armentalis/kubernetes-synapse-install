@@ -788,11 +788,12 @@ data:
 
     # The public URIs of the TURN server to give to clients
     #
-    #turn_uris: []
+    turn_uris: [ "turn:turn.sunsingerus.com:3478?transport=udp", "turn:turn.sunsingerus.com:3478?transport=tcp" ]
+    #turn_uris: [ "turn:turn.sunsingerus.com:3478?transport=tcp" ]
 
     # The shared secret used to compute passwords for the TURN server
     #
-    #turn_shared_secret: "YOUR_SHARED_SECRET"
+    turn_shared_secret: "SecretPassw0rd"
 
     # The Username and password if the TURN server needs them and
     # does not use a token
@@ -802,7 +803,7 @@ data:
 
     # How long generated TURN credentials last
     #
-    #turn_user_lifetime: 1h
+    turn_user_lifetime: 24h
 
     # Whether guests should be allowed to use the TURN server.
     # This defaults to True, otherwise VoIP will be unreliable for guests.
@@ -810,7 +811,7 @@ data:
     # connect to arbitrary endpoints without having first signed up for a
     # valid account (e.g. by passing a CAPTCHA).
     #
-    #turn_allow_guests: True
+    turn_allow_guests: True
 
 
     ## Registration ##
