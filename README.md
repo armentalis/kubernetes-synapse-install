@@ -15,3 +15,5 @@ adding this SRV record in the `synapse.sunsingerus.com` DNS zone:
  _matrix._tcp.synapse.sunsingerus.com. 3600 IN SRV 10 5 443 synapse.sunsingerus.com.
 
 ```
+
+Troubleshoot integration by this URL [https://federationtester.matrix.org/api/report?server_name=synapse.sunsingerus.com](https://federationtester.matrix.org/api/report?server_name=synapse.sunsingerus.com)
