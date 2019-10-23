@@ -3,9 +3,9 @@ kind: ConfigMap
 metadata:
   name: homeserverconf
 data:
-  my.matrix.host.signing.key: |
+  synapse.sunsingerus.com.signing.key: |
     ed25519 a_xcvo 0bWYed9GfwxdsoEJPhRT64AeR7crPJH9ThGpSPIQYEk
-  my.matrix.host.log.config: |
+  synapse.sunsingerus.com.log.config: |
     version: 1
     
     formatters:
@@ -42,7 +42,7 @@ data:
     # e.g. matrix.org, localhost:8080, etc.
     # This is also the last part of your UserID.
     #
-    server_name: "my.matrix.host"
+    server_name: "synapse.sunsingerus.com"
 
     # When running as a daemon, the file to store the pid in
     #
@@ -528,7 +528,7 @@ data:
     # A yaml python logging config file as described by
     # https://docs.python.org/3.7/library/logging.config.html#configuration-dictionary-schema
     #
-    log_config: "/config/my.matrix.host.log.config"
+    log_config: "/config/synapse.sunsingerus.com.log.config"
 
 
     ## Ratelimiting ##
@@ -1067,7 +1067,7 @@ data:
 
     # Path to the signing key to sign messages with
     #
-    signing_key_path: "/config/my.matrix.host.signing.key"
+    signing_key_path: "/config/synapse.sunsingerus.com.signing.key"
 
     # The keys that the server used to sign messages with but won't use
     # to sign new messages. E.g. it has lost its private key
