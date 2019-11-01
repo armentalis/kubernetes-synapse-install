@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: homeserverconf
+  name: synapse-conf
 data:
   synapse.sunsingerus.com.signing.key: |
     ed25519 a_xcvo 0bWYed9GfwxdsoEJPhRT64AeR7crPJH9ThGpSPIQYEk
@@ -59,7 +59,7 @@ data:
     # use synapse with a reverse proxy, this should be the URL to reach
     # synapse via the proxy.
     #
-    #public_baseurl: https://example.com/
+    public_baseurl: https://synapse.sunsingerus.com/
 
     # Set the soft limit on the number of file descriptors synapse can use
     # Zero is used to indicate synapse should set the soft limit to the
@@ -1174,7 +1174,7 @@ data:
       #  metadata:
       #    #local: ["saml2/idp.xml"]
       #    remote:
-      #      - url: https://our_idp/metadata.xml
+      #      - url: https://keycloak.sunsingerus.com/auth/realms/dev-realm/protocol/saml/descriptor
       #
       #    # By default, the user has to go to our login page first. If you'd like
       #    # to allow IdP-initiated login, set 'allow_unsolicited: True' in a
@@ -1206,7 +1206,7 @@ data:
       # Instead of putting the config inline as above, you can specify a
       # separate pysaml2 configuration file:
       #
-      #config_path: "/data/sp_conf.py"
+      config_path: "/config/sp_conf.py"
 
       # the lifetime of a SAML session. This defines how long a user has to
       # complete the authentication process, if allow_unsolicited is unset.
@@ -1635,3 +1635,162 @@ data:
         #
         #  logging:
         #    false
+  key.pem: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEowIBAAKCAQEArJP5cx45BtnOb2NUZEq1MnUZoI74gpsDGAwkotGAVO7XOmnx
+    KHJLCK1ff9zATyHd5XRW3ay2yLotN62V86f8kmP6ZWJyPPwzzyL0rvSRtLxyLoWI
+    UMd62DZ0Q/GCvphBnEvfhqLlXdZkwKbi9IxVrllw14hXzjdbK61UMW/ySUpplP+K
+    1hdGKdmeCOb8/xkxED339/6FCTIcEPuaBSh4ky52b2cEJ1LYLL55iRFRGZcBn47h
+    Gh10IWXbYqSkYeccUgrocHd089tOiTrmZvmzAUH3rscpRlkDNHArtfyn8xOWqYAF
+    2yOGyd6kp6DHxsGv1+33fGxcAxD9BbPROglPAQIDAQABAoIBABImDZmZmA2sYhU8
+    sOdLI/sGbYeBAYlam9yvijrFJWXJKEEwWvgR7OogsWZU5LRtr1QuA+SUATTiv1aX
+    nqldBSav9OksjS70ps4lsu2jMp97IdbanBdCoxyRvXBXuZQpltzE7eDOyKgxn67S
+    3hMxnuES7tb7s6AwGhphw/Te/O/QA0x5cufotuniyyYS/qyhN+F/o0kNOWUWY3ar
+    EPRoYq3VjLY/cqsnLPUpvhWB5J/Sj4ZWpGOO2bw6EAWv0yn/m0qcc5Nsi8nCbEwf
+    0Kld5ZJC4OKcHFYMaHsisLYKXHUu4Yly1mxShh43B0hogFimXBE/RZravai7ic1t
+    zmgKwkECgYEA1EKHWjXMZbXGAoPC/S4Jd8Kou8tPb7RHyqwAMinYWc2MN/Z6s8l6
+    pgAXSsjrE0pBqtHY6X7lGZpZqSsoTXtiT3ELzggoxs1gRgGLDdjZbkcOWjr6oJFA
+    k/qbNqQaRtYGLYBPqy8BR0fvDm1y7RgTch+cKTZ3M9AxITADaHmwGJUCgYEA0CQV
+    2rKU6ZGUiOpkKD5rOp0XECt58ziximjASR7dv7+ImBKMAFXAt2+1xW/E/gGVQHvD
+    iPuG50Pl2pCjYkXzl3T9YzcfnDw9TAnWTGb0ejWnPZBwAlAI425PijcQMnoWOXSB
+    CW5wTzq5cuL4yKlhQEKrluxaK8i+x72iTOYLRb0CgYAp7Dnvh1Cnhg9lz8BjYQRd
+    swTAkpdN6L2FOhOP1NP2aLKZGwWBHPosbzgqfSRw2um9Y1UESRvWwrWSxANhykzQ
+    g/Ng7hufqFCrgwKD6aCIN2COUbfOnuGyWHzvfdnyw7LUqdMSbGZEPeDpaJSaX3b3
+    w2aEfU1t3mDVvTXvHJm7QQKBgQCWcZ7CRtZPxQRBunnOhN9orGchLuukm9PoITLr
+    Jz5M/Jo0oSNEkrcLX9lY7iLLHkXNKCf7eSLXQkJ/qpAN1lXtoYgNEKjuerQro+ib
+    rMcFFobdfusXINZr3S3sz0QL2Cb8PHOQZ50SB3ZHzjrYf2Vl10rDee7rOtx671zC
+    jHyVWQKBgF9DA3rotdXJ4iUytXT5ox7m2bXdit5MLlRQL0mvvOJ1p5G7ecONTy0m
+    /kudAHk/9UUqmn3Im/brzNaxtFtEstU9X5MEICKshqTN4Gh4ULE34Nws8NJZabq7
+    cBuhhtrbUhdeK2dnxCRO+Q1RH9+7JgPj+8bdTWKm6/ZW+XW+7XHy
+    -----END RSA PRIVATE KEY-----
+  cert.pem: |
+    -----BEGIN CERTIFICATE-----
+    MIICvTCCAaUCBgFuKG/eTjANBgkqhkiG9w0BAQsFADAiMSAwHgYDVQQDDBdzeW5h
+    cHNlLXN1bnNpbmdlcnVzLWNvbTAeFw0xOTExMDExOTI1NTBaFw0yOTExMDExOTI3
+    MzBaMCIxIDAeBgNVBAMMF3N5bmFwc2Utc3Vuc2luZ2VydXMtY29tMIIBIjANBgkq
+    hkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArJP5cx45BtnOb2NUZEq1MnUZoI74gpsD
+    GAwkotGAVO7XOmnxKHJLCK1ff9zATyHd5XRW3ay2yLotN62V86f8kmP6ZWJyPPwz
+    zyL0rvSRtLxyLoWIUMd62DZ0Q/GCvphBnEvfhqLlXdZkwKbi9IxVrllw14hXzjdb
+    K61UMW/ySUpplP+K1hdGKdmeCOb8/xkxED339/6FCTIcEPuaBSh4ky52b2cEJ1LY
+    LL55iRFRGZcBn47hGh10IWXbYqSkYeccUgrocHd089tOiTrmZvmzAUH3rscpRlkD
+    NHArtfyn8xOWqYAF2yOGyd6kp6DHxsGv1+33fGxcAxD9BbPROglPAQIDAQABMA0G
+    CSqGSIb3DQEBCwUAA4IBAQCJIaUyC/LiWO6SGRZ4qZ1JmOkKTl2r4AvkDjGZagF4
+    UExVD6FjFhB9wXIQChR7b9K8zzBWFjpy7QV3UrTl0H9AYjX5MQgq+mjK+2JWSuIA
+    9IVGNflAiA4eDDO6STcd00l2OU8+LxZ1I5TYmSno+5IQTqYMPNFQzO2acG3cmbZp
+    SNb7PS1pB6iiwSDnF5yIEWJW4lSX/PQ5haTJ0wWnqZvOncDTWbIaWbayCYxaIfpe
+    BMOagS/niBMlQ9q4HGB1Tw4R2EVKC9BEmM5WVN6bMZH8rVZ+SSRzBKIFsyCwgY5x
+    0yqlGWtktqxSsticgMDSC5qF0hYcwJanmXeU4Y2hpuY6
+    -----END CERTIFICATE-----
+  idp.xml: |
+    <?xml version="1.0" encoding="UTF-8"?>
+    <EntitiesDescriptor Name="urn:keycloak" xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
+    xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+    <EntityDescriptor entityID="https://keycloak.sunsingerus.com/auth/realms/dev-realm">
+    <IDPSSODescriptor WantAuthnRequestsSigned="true"
+    protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <KeyDescriptor use="signing">
+    <dsig:KeyInfo>
+    <dsig:KeyName>XYJwjqcwTUHQsmuaSrdXoKml6fOwCkyLNgGrKhL1hWE</dsig:KeyName>
+    <dsig:X509Data>
+    <dsig:X509Certificate>MIICoTCCAYkCBgFtyvawCDANBgkqhkiG9w0BAQsFADAUMRIwEAYDVQQDDAlkZXYtcmVhbG0wHhcNMTkxMDE0MTU0ODQ3WhcNMjkxMDE0MTU1MDI3WjAUMRIwEAYDVQQDDAlkZXYtcmVhbG0wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCJ65207EYwxlNbaJ7vMIRRLg2CTR7fcOddgR+GsyRzYpR29cDiohgqSx/tMmngglb9xNGu2rHYoDmBmeg4ZDXpyoSw/eUaSY0TW7LsCwWJoHwQ/PsEAOZZ0jUjJg0slGZ557Cx9UXmkOTE0zcBH1H1F4SbJQ66avuVVV8iQNi6kxiA7b6to5IIP/nu9q8A4st/eAyfs+N8M4uzlKxDbhNGxLlByzlwVhIcEx+ljOCYe5YdX1j6HXIOz8AIfBKQAbuYSZwgAj0U9oREAyYWTtJ9zVoxQOVhS9xAP0EFqgdCIqKVr6yHNRXufZqg7WN7zHF1t38YElOXKqmJnmZX3xozAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAHZxlTUqO1cmHuRtcqk7yZmp4UTJdSbHRNkGkbY9yAYYVuAiYRrVBU1RYMzpSZOuDx6CFBZoo8u9O4mw7fkt15mrFOLzEtEkD7QDmqWFcYkzB7pZewLcV6dwx5oedZPH929cUS6IxoHnR3OYxGsvVSL63elVeec9yVXcaWWBNVoglHzWHXYyoX90kbJA7dJ7ug13ID5NsJxkMjyuZFhz4LO9tAeifsoyDbir4NdEzd5jug/evCfeUClpmq/++4Y+CGFuCEi8lwhXU9DGZnYAH6eBxiwkKVBGY3D5/BTOE1R2ltFjmxaoLm5wC+OCXVyEb4gvgy1m2nL7gMTJgl52bJ4=</dsig:X509Certificate>
+    </dsig:X509Data>
+    </dsig:KeyInfo>
+    </KeyDescriptor>
+    <SingleLogoutService
+    Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+    Location="https://keycloak.sunsingerus.com/auth/realms/dev-realm/protocol/saml" />
+    <SingleLogoutService
+    Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+    Location="https://keycloak.sunsingerus.com/auth/realms/dev-realm/protocol/saml" />
+    <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
+    <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+    <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</NameIDFormat>
+    <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
+    <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+    Location="https://keycloak.sunsingerus.com/auth/realms/dev-realm/protocol/saml" />
+    <SingleSignOnService
+    Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+    Location="https://keycloak.sunsingerus.com/auth/realms/dev-realm/protocol/saml" />
+    <SingleSignOnService
+    Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
+    Location="https://keycloak.sunsingerus.com/auth/realms/dev-realm/protocol/saml" />
+    </IDPSSODescriptor>
+    </EntityDescriptor>
+    </EntitiesDescriptor>
+  sp_conf.py: |
+    import saml2
+    from saml2.saml import NAME_FORMAT_URI
+    
+    BASE = "https://synapse.sunsingerus.com/"
+    
+    CONFIG = {
+        "entityid": "synapse-sunsingerus-com",
+        "description": "Matrix Server",
+        "service": {
+            "sp": {
+                "name": "matrix-login",
+                "endpoints": {
+                    "single_sign_on_service": [
+                        (BASE + "_matrix/saml2/authn_response", saml2.BINDING_HTTP_POST),
+                    ],
+                    "assertion_consumer_service": [
+                        (BASE + "_matrix/saml2/authn_response", saml2.BINDING_HTTP_POST),
+                    ],
+                    #"single_logout_service": [
+                    #    (BASE + "_matrix/saml2/logout", saml2.BINDING_HTTP_POST),
+                    #],
+                },
+                "required_attributes": ["uid",],
+                "optional_attributes": ["displayName"],
+                "sign_assertion": True,
+                "sign_response": True,
+            }
+        },
+        "debug": 0,
+        "key_file": "/config/key.pem",
+        "cert_file": "/config/cert.pem",
+        "encryption_keypairs": [
+            {
+                "key_file": "/config/key.pem",
+                "cert_file": "/config/cert.pem",
+            }
+        ],
+        "attribute_map_dir": "/config_saml2_attribute_maps/",
+        "metadata": {
+            "local": ["/config/idp.xml"]
+        },
+        # If you want to have organization and contact_person for the pysaml2 config
+        #"organization": {
+        #    "name": "Example AB",
+        #    "display_name": [("Example AB", "se"), ("Example Co.", "en")],
+        #    "url": "http://example.com/roland",
+        #},
+        #"contact_person": [{
+        #    "given_name": "Example",
+        #    "sur_name": "Example",
+        #    "email_address": ["example@example.com"],
+        #    "contact_type": "technical",
+        #    },
+        #],
+        # Make sure to have xmlsec1 installed on your host(s)!
+        "xmlsec_binary": "/usr/bin/xmlsec1",
+        "name_form": NAME_FORMAT_URI,
+    }
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: synapse-conf-saml2-attribute-maps
+data:
+  map.py: |
+    MAP = {
+        "identifier": "urn:oasis:names:tc:SAML:2.0:attrname-format:uri",
+        "fro": {
+            'uid': 'uid',
+            'displayName': 'displayName',
+        },
+        "to": {
+            'uid': 'uid',
+            'displayName': 'displayName',
+        }
+    }

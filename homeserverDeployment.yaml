@@ -41,6 +41,8 @@ spec:
       volumeMounts:
         - name: config-volume
           mountPath: /config
+        - name: config-volume-saml2-attribute-maps
+          mountPath: /config_saml2_attribute_maps
         - name: data-volume
           mountPath: /data
       ports:
@@ -61,7 +63,10 @@ spec:
   volumes:
     - name: config-volume
       configMap:
-        name: homeserverconf
+        name: synapse-conf
+    - name: config-volume-saml2-attribute-maps
+      configMap:
+        name: synapse-conf-saml2-attribute-maps
     - name: data-volume
       persistentVolumeClaim:
         claimName: data-pv-claim
