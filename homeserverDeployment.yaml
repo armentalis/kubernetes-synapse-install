@@ -42,7 +42,8 @@ spec:
         - name: config-volume
           mountPath: /config
         - name: config-volume-saml2-attribute-maps
-          mountPath: /config_saml2_attribute_maps
+          mountPath: /config_saml2_attribute_maps/map.py
+          subPath: map.py
         - name: data-volume
           mountPath: /data
       ports:

@@ -30,7 +30,7 @@ data:
         level: INFO
     
     root:
-      level: INFO
+      level: DEBUG
       handlers: [console]
   homeserver.yaml: |
     # vim:ft=yaml
@@ -1724,7 +1724,7 @@ data:
     BASE = "https://synapse.sunsingerus.com/"
     
     CONFIG = {
-        "entityid": "synapse-sunsingerus-com",
+        "entityid": "synapse-sunsingerus-com-client",
         "description": "Matrix Server",
         "service": {
             "sp": {
@@ -1740,8 +1740,9 @@ data:
                     #    (BASE + "_matrix/saml2/logout", saml2.BINDING_HTTP_POST),
                     #],
                 },
-                "required_attributes": ["uid",],
-                "optional_attributes": ["displayName"],
+                "required_attributes": ["uid","displayName"],
+                "optional_attributes": [],
+                #"optional_attributes": ["displayName"],
                 "sign_assertion": True,
                 "sign_response": True,
             }
@@ -1757,7 +1758,8 @@ data:
         ],
         "attribute_map_dir": "/config_saml2_attribute_maps/",
         "metadata": {
-            "local": ["/config/idp.xml"]
+            #"local": ["/config/idp.xml"]
+            "remote": [{"url": "https://keycloak.sunsingerus.com/auth/realms/synapse-sunsingerus-com-realm/protocol/saml/descriptor"}]
         },
         # If you want to have organization and contact_person for the pysaml2 config
         #"organization": {
@@ -1794,3 +1796,4 @@ data:
             'displayName': 'displayName',
         }
     }
+
