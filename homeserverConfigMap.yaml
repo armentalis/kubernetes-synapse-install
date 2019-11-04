@@ -1256,8 +1256,9 @@ data:
     #
     #jwt_config:
     #   enabled: true
-    #   secret: "a secret"
-    #   algorithm: "HS256"
+    #   secret: "258e44e9-622d-49bb-a759-dfa1886e5914"
+    #   #algorithm: "HS256"
+    #   algorithm: "RS256"
 
 
     password_config:
