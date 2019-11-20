@@ -622,7 +622,7 @@ data:
 
     # Directory where uploaded images and attachments are stored.
     #
-    media_store_path: "/data/media_store"
+    #media_store_path: "/data/media_store"
 
     # Media storage providers allow media to be stored in different
     # locations.
@@ -654,7 +654,7 @@ data:
 
     # Directory where in-progress uploads are stored.
     #
-    uploads_path: "/data/uploads"
+    #uploads_path: "/data/uploads"
 
     # The largest allowed upload size in bytes
     #
