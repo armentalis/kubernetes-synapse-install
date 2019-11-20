@@ -34,7 +34,7 @@ echo -n "secretkey" | base64
 ./mc ls minio
 
 # create bucket
-./mc mb minio/zzz
+./mc mb minio/synapsebucket
 
 # show tree
 mc tree minio/test-bucket

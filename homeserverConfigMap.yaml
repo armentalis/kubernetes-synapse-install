@@ -644,7 +644,7 @@ data:
       store_remote: True
       store_synchronous: True
       config:
-        bucket: synapse_bucket
+        bucket: synapsebucket
         # All of the below options are optional, for use with non-AWS S3-like
         # services, or to specify access tokens here instead of some external method.
         #region_name: <S3_REGION_NAME>
