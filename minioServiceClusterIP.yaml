@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: synapse-minio
+  labels:
+    app: trinity
+spec:
+  type: ClusterIP
+  ports:
+  - port: 9000
+    protocol: TCP
+    targetPort: 9000
+  selector:
+    app: trinity
