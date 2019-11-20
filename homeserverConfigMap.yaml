@@ -618,7 +618,7 @@ data:
     # Enable the media store service in the Synapse master. Uncomment the
     # following if you are using a separate media store worker.
     #
-    #enable_media_repo: false
+    enable_media_repo: false
 
     # Directory where uploaded images and attachments are stored.
     #
@@ -638,6 +638,19 @@ data:
     #    store_synchronous: false
     #    config:
     #       directory: /mnt/some/other/directory
+    media_storage_providers:
+    - module: s3_storage_provider.S3StorageProviderBackend
+      store_local: True
+      store_remote: True
+      store_synchronous: True
+      config:
+        bucket: synapse_bucket
+        # All of the below options are optional, for use with non-AWS S3-like
+        # services, or to specify access tokens here instead of some external method.
+        #region_name: <S3_REGION_NAME>
+        endpoint_url: http://synapse-minio-hl-svc:9000
+        access_key_id: accesskey
+        secret_access_key: secretkey
 
     # Directory where in-progress uploads are stored.
     #
