@@ -642,7 +642,7 @@ data:
     - module: s3_storage_provider.S3StorageProviderBackend
       store_local: True
       store_remote: True
-      store_synchronous: True
+      store_synchronous: false
       config:
         bucket: synapsebucket
         # All of the below options are optional, for use with non-AWS S3-like
