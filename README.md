@@ -88,3 +88,11 @@ cat ~/.mc/config.json
 }
 
 ```
+
+```bash
+pip install git+https://github.com/matrix-org/synapse-s3-storage-provider.git
+```
+```bash
+cd /usr/local/lib
+ls s3_storage_provider.py
+```

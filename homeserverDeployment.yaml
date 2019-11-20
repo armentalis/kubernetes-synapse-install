@@ -26,7 +26,8 @@ spec:
           mountPath: /data
   containers:
     - name: synapse
-      image: matrixdotorg/synapse
+#      image: matrixdotorg/synapse
+      image: sunsingerus/synapse-s3-storage-provider:dev 
       env:
         - name: SYNAPSE_CONFIG_PATH
           value: "/config/homeserver.yaml"
