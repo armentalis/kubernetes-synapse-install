@@ -19,6 +19,9 @@ adding this SRV record in the `synapse.sunsingerus.com` DNS zone:
 Troubleshoot integration by this URL [https://federationtester.matrix.org/api/report?server_name=synapse.sunsingerus.com](https://federationtester.matrix.org/api/report?server_name=synapse.sunsingerus.com)
 
 
+## S3 integration
+[https://github.com/matrix-org/synapse-s3-storage-provider](https://github.com/matrix-org/synapse-s3-storage-provider)
+
 Obtain minio client by
 ```bash
 wget https://dl.min.io/client/mc/release/linux-amd64/mc
