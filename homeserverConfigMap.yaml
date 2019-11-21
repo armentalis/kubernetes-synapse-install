@@ -618,11 +618,11 @@ data:
     # Enable the media store service in the Synapse master. Uncomment the
     # following if you are using a separate media store worker.
     #
-    enable_media_repo: false
+    #enable_media_repo: false
 
     # Directory where uploaded images and attachments are stored.
     #
-    #media_store_path: "/data/media_store"
+    media_store_path: "/data/media_store"
 
     # Media storage providers allow media to be stored in different
     # locations.
@@ -642,7 +642,7 @@ data:
     - module: s3_storage_provider.S3StorageProviderBackend
       store_local: True
       store_remote: True
-      store_synchronous: false
+      store_synchronous: True
       config:
         bucket: synapsebucket
         # All of the below options are optional, for use with non-AWS S3-like
@@ -654,7 +654,7 @@ data:
 
     # Directory where in-progress uploads are stored.
     #
-    #uploads_path: "/data/uploads"
+    uploads_path: "/data/uploads"
 
     # The largest allowed upload size in bytes
     #
