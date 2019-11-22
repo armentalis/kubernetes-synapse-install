@@ -33,8 +33,10 @@ At the end of the day client should looks like:
 UID mapper:
 ![UID mapper](img/mapper_uid.png)
 
-diaplayName mapper:
+displayName mapper:
 ![displayName mapper](img/mapper_displayName.png)
+
+Code used in mapper:
 
 ```js
 // Concat First and Last name of user when non-empty
@@ -71,7 +73,8 @@ Fetch them from Keycloak Client's **SAML Keys** tab page as following:
 ```
 You should get a file named `keystore.p12`
 
-Extract keys as
+Extract keys with the help of `SAML2_extract_keys.sh` script:
+**SAML2_extract_keys.sh**:
 ```bash
 export KEYSTORE_PW="qwerty"
 openssl pkcs12 -in keystore.p12 -password "pass:${KEYSTORE_PW}" -nocerts -nodes | openssl rsa -out key.pem
