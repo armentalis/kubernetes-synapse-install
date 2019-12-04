@@ -6,6 +6,7 @@ Login into Keycloak
 ```
 synapse-sunsingerus-com-realm
 ```
+![realm](img/realm.png)
 
 
 ### Create client
